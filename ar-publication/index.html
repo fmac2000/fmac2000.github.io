@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     </head>
     <script src="https://raw.githubusercontent.com/frazermcpherson/frazermcpherson.github.io/master/ar-publication/shaderglsl.js"></script>
-    
+    <!--http://glslsandbox.com/e#59252.0 -->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -26,7 +26,7 @@
                 <a-torus-knot radius='0.26' radius-tubular='0.05'></a-torus-knot>
             </a-box>
         </a-marker>
-
+        
         <!--- <a-marker id="animated-marker" type='barcode' value='6'>
             <a-entity
                 animation-mixer
@@ -39,3 +39,37 @@
         </a-scene>
     </body>
 </html>
+
+
+
+<!--
+
+precision highp float;
+uniform float time;
+uniform vec2 resolution;
+varying vec3 fPosition;
+varying vec3 fNormal;
+
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+
+
+void main() {
+    vec2 p = gl_FragCoord.xy / resolution.x * .05;
+    vec3 col;
+    for(float j = 0.0; j < 3.0; j++){
+        for(float i = 1.; i < 25.0; i++){
+            p.x += (.5*(0.05 / (i + j) * sin(i * 10. * p.y + (time*0.2) + cos((time / (150. * i)) * i + j))));
+            p.y += (1.5*(0.02 / (i + j)* cos(i * 10. * p.x + (time*0.15) + sin((time / (100. * i)) * i + j))));
+        }
+  
+	for(float k = 2.; k < 20.0; k++){
+		col[int(j)] = k*(abs(p.x + p.y));
+	}
+    }
+    gl_FragColor = vec4(col, 1.);
+}
+
+-->
