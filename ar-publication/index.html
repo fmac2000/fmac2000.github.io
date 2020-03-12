@@ -22,8 +22,11 @@
         <a-marker id="knot-marker" type='barcode' value='6'>
             <a-box position='0 5 0' material='opacity: 0.5; side: double'>
                 <a-torus-knot radius='0.26' radius-tubular='0.05'></a-torus-knot>
-                <a-entity bmfont-text="text: HELLO!; color: #333" position="0 0 -5"></a-entity>
             </a-box>
+            <a-entity
+                  geometry="primitive: plane; width: 4; height: auto"
+                  material="color: blue"
+                  text="value: This text will be 4 units wide."></a-entity>
         </a-marker>
 
         <!--- <a-marker id="animated-marker" type='barcode' value='6'>
