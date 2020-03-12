@@ -20,11 +20,14 @@
         </a-marker>
 
         <a-marker id="animated-marker" type='barcode' value='6'>
-            <a-entity
-                animation-mixer
-                gltf-model="#animated-asset"
-                scale="2 2 2">
-            </a-entity>
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
+                <a-torus-knot radius='0.26' radius-tubular='0.05'></a-torus-knot>
+            </a-box>
+            //<a-entity
+            //    animation-mixer
+            //    gltf-model="#animated-asset"
+            //    scale="2 2 2">
+            //</a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
