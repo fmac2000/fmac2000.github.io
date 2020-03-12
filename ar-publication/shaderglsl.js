@@ -1,4 +1,8 @@
-AFRAME.registerShader('shaderglsl', {
+/* global AFRAME, THREE */
+
+// shader-grid-glitch.js
+
+AFRAME.registerShader('glslshader', {
   schema: {
     color: {type: 'color', is: 'uniform'},
     timeMsec: {type: 'time', is: 'uniform'}
@@ -13,32 +17,25 @@ void main() {
 }
 `,
   fragmentShader: `
-precision highp float;
-uniform float time;
-uniform vec2 resolution;
-varying vec3 fPosition;
-varying vec3 fNormal;
-
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-
+varying vec2 vUv;
+uniform vec3 color;
+uniform float timeMsec; // A-Frame time in milliseconds.
 
 void main() {
-    vec2 p = gl_FragCoord.xy / resolution.x * .05;
-    vec3 col;
-    for(float j = 0.0; j < 3.0; j++){
-        for(float i = 1.; i < 25.0; i++){
-            p.x += (.5*(0.05 / (i + j) * sin(i * 10. * p.y + (time*0.2) + cos((time / (150. * i)) * i + j))));
-            p.y += (1.5*(0.02 / (i + j)* cos(i * 10. * p.x + (time*0.15) + sin((time / (100. * i)) * i + j))));
-        }
-  
-	for(float k = 2.; k < 20.0; k++){
-		col[int(j)] = k*(abs(p.x + p.y));
-	}
-    }
-    gl_FragColor = vec4(col, 1.);
+  float time = timeMsec / 1000.0; // Convert from A-Frame milliseconds to typical time in seconds.
+  // Use sin(time), which curves between 0 and 1 over time,
+  // to determine the mix of two colors:
+  //    (a) Dynamic color where 'R' and 'B' channels come
+  //        from a modulus of the UV coordinates.
+  //    (b) Base color.
+  // 
+  // The color itself is a vec4 containing RGBA values 0-1.
+  gl_FragColor = mix(
+    vec4(mod(vUv , 0.05) * 20.0, 1.0, 1.0),
+    vec4(color, 1.0),
+    sin(time)
+  );
 }
 `
 });
+
