@@ -1,4 +1,4 @@
-AFRAME.registerShader('grid-glitch', {
+AFRAME.registerShader('shaderglsl', {
   schema: {
     color: {type: 'color', is: 'uniform'},
     timeMsec: {type: 'time', is: 'uniform'}
