@@ -2,7 +2,7 @@
 
 // shader-grid-glitch.js
 
-AFRAME.registerShader('grid-glitch', {
+AFRAME.registerShader('rainbow', {
   schema: {
     color: {type: 'color', is: 'uniform'},
     timeMsec: {type: 'time', is: 'uniform'}
