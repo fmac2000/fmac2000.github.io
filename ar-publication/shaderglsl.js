@@ -1,13 +1,22 @@
-// vertex.glsl
+/* global AFRAME, THREE */
 
+// shader-grid-glitch.js
+
+AFRAME.registerShader('grid-glitch', {
+  schema: {
+    color: {type: 'color', is: 'uniform'},
+    timeMsec: {type: 'time', is: 'uniform'}
+  },
+
+  vertexShader: `
 varying vec2 vUv;
 
 void main() {
   vUv = uv;
   gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 }
-// fragment.glsl
-
+`,
+  fragmentShader: `
 varying vec2 vUv;
 uniform vec3 color;
 uniform float timeMsec; // A-Frame time in milliseconds.
@@ -19,7 +28,7 @@ void main() {
   //    (a) Dynamic color where 'R' and 'B' channels come
   //        from a modulus of the UV coordinates.
   //    (b) Base color.
-  //
+  // 
   // The color itself is a vec4 containing RGBA values 0-1.
   gl_FragColor = mix(
     vec4(mod(vUv , 0.05) * 20.0, 1.0, 1.0),
@@ -27,12 +36,5 @@ void main() {
     sin(time)
   );
 }
-AFRAME.registerShader('grid-glitch', {
-  schema: {
-    color: {type: 'color', is: 'uniform'},
-    timeMsec: {type: 'time', is: 'uniform'}
-  },
-
-  vertexShader: vertexShader,
-  fragmentShader: fragmentShader
+`
 });
