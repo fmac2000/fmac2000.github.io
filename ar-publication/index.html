@@ -10,8 +10,26 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 	<script src="https://threejs.org/build/three.js"></script>
     
- 
+ <script>
+	 AFRAME.registerShader('hello-world-shader', {
+  schema: {
+    color: { type: 'vec3', default: '0.5 0.5 0.5', is: 'uniform' }
+  },
 
+  vertexShader: [
+    'void main() {',
+    '  gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * gl_Vertex;',
+    '}'
+  ].join('\n'),
+
+  fragmentShader: [
+    'uniform vec3 color;'
+    'void main() {'
+    '  gl_FragColor = vec4(color, 1.0);',
+    '}'
+  ].join('\n')
+});
+	</script>
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
