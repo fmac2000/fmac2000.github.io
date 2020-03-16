@@ -17,7 +17,8 @@
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>
         </a-assets>
 		
-        <a-entity geometry="primitive:box;" material="shader:gif;src:url(nyancat.gif);color:green;opacity:.8"></a-entity>        
+       <a-entity geometry="primitive:box;width:1.5;height:1.5;depth:1.5;" position="-1.2 4.625 -1" material="shader:gif;src:#u3image;" animation="property: rotation; dur: 10000;to: 0 360 0; loop: true; easing: linear;"></a-entity>
+    
         
 	<a-marker id="knot-marker" type='barcode' value='7'>
             <a-box position='0 0.5 0' material="shader:gif;src:#u3image;">
@@ -31,7 +32,7 @@
                 scale="2 2 2">
             </a-entity>
         </a-marker>
-        <a-entity camera></a-entity>
+       <!-- <a-entity camera></a-entity> -->
         </a-scene>
 	</body>
 </html>
