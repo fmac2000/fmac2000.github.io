@@ -13,26 +13,20 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js" embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+        <a-scene inspector="" vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" keyboard-shortcuts="" screenshot="" aframe-inspector-removed-embedded="undefined">
         <a-assets>
-	    <img id="u3becompgif" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/U3-BEcomp.gif">
-            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>
-        </a-assets>
-		
+	    
+        <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>	
        
-        
-	<a-marker id="knot-marker" type='barcode' value='7'>
-		<a-entity geometry="primitive: plane; width: 1.32" material="side: double; shader: gif; src: #u3becompgif"></a-entity>
+	<a-marker id="knot-marker" type="barcode" value="7" material="" arjs-anchor="" arjs-hit-testing="" visible="false">
 	</a-marker>
         
-        <a-marker id="animated-marker" type='barcode' value='6'>
-            <a-entity
-                animation-mixer
-                gltf-model="#animated-asset"
-                scale="2 2 2">
+        <a-marker id="animated-marker" type="barcode" value="6" material="" arjs-anchor="" arjs-hit-testing="">
+            <a-entity animation-mixer="" gltf-model="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf" scale="2 2 2">
             </a-entity>
         </a-marker>
-        <a-entity camera></a-entity>
-        </a-scene>
+		
+        <a-entity camera="" data-aframe-inspector-original-camera=""></a-entity>
+        <div class="a-loader-title" style="display: none;"></div></a-scene>
 	</body>
 </html>
