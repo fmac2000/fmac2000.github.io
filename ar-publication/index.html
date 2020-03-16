@@ -12,14 +12,13 @@
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
         <a-assets>
-	    <img id="u3image" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/U3-BEcomp.gif">
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>
         </a-assets>
 		
        
         
 	<a-marker id="knot-marker" type='barcode' value='7'>
-           <a-box position="0 0 0" material="shader:flat"></a-box>
+           <a-box position="0 0 0"></a-box>
 	</a-marker>
         
         <a-marker id="animated-marker" type='barcode' value='6'>
