@@ -7,6 +7,7 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 	
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
@@ -14,7 +15,7 @@
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>
         </a-assets>
-            
+        <a-entity geometry="primitive:box;" material="shader:gif;src:url(https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/U3-BEcomp.gif);color:green;opacity:.8"></a-entity>    
             
         <a-marker id="knot-marker" type='barcode' value='7'>
             <a-box position='0 0.5 0'>
