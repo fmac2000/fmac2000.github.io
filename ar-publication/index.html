@@ -11,7 +11,7 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+        <a-scene inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
         <a-assets>
 	    <video id="u3image" src="https://github.com/fmac2000/fmac2000.github.io/blob/master/ar-publication/assets/U3-BE.mp4" loop="true" muted="muted" autoplay="autoplay" preload="true" crossorigin="anonymous" webkit-playsinline="">
 		    <source src="https://github.com/fmac2000/fmac2000.github.io/blob/master/ar-publication/assets/U3-BE.mp4" type="video/mp4"></video>
