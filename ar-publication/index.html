@@ -15,24 +15,20 @@
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>
         </a-assets>
             
-        <a-marker type='barcode' value='7'>
-		
-        </a-marker>
             
-        <a-marker id="knot-marker" type='barcode' value='6'>
+        <a-marker id="knot-marker" type='barcode' value='7'>
             <a-box position='0 0.5 0'>
                 <a-torus-knot radius='0.26' radius-tubular='0.05'></a-torus-knot>
             </a-box>
         </a-marker>
         
-        <!--- <a-marker id="animated-marker" type='barcode' value='6'>
+        <a-marker id="animated-marker" type='barcode' value='6'>
             <a-entity
                 animation-mixer
                 gltf-model="#animated-asset"
                 scale="2 2 2">
             </a-entity>
         </a-marker>
-        -->
         <a-entity camera></a-entity>
         </a-scene>
 	</body>
