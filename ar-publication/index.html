@@ -13,14 +13,14 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene inspector="" vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" keyboard-shortcuts="" screenshot="" aframe-inspector-removed-embedded="undefined">
+        <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" keyboard-shortcuts="" screenshot="" aframe-inspector-removed-embedded="undefined">
         <a-assets>
 	    
         <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/CesiumMan.gltf"></a-asset-item>	
-        </a-assets>
+        <img id="u3becomp" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/U3-BEcomp.gif" crossorigin="anonymous"></a-assets>
 		
-	<a-marker id="knot-marker" type="barcode" value="7" material="" arjs-anchor="" arjs-hit-testing="" visible="false">
-		<a-box></a-box>
+	<a-marker id="knot-marker" type="barcode" value="7" material="" arjs-anchor="" arjs-hit-testing="">
+		<a-box material="shader: gif; side: double; src: #u3becomp" geometry="primitive: plane"></a-box>
 	</a-marker>
         
         <a-marker id="animated-marker" type="barcode" value="6" material="" arjs-anchor="" arjs-hit-testing="">
@@ -29,6 +29,6 @@
         </a-marker>
 		
         <a-entity camera="" data-aframe-inspector-original-camera=""></a-entity>
-        <div class="a-loader-title" style="display: none;"></div></a-scene>
+        </a-scene>
 	</body>
 </html>
