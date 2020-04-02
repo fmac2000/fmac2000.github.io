@@ -1,6 +1,11 @@
 /* global AFRAME, THREE */
 
-// shader-grid-glitch.js
+// Fmac shader
+
+// Near impossible to add this but here x
+// http://glslsandbox.com/e#59252.0
+// https://glitch.com/edit/#!/aframe-simpler-shader
+// https://shaderfrog.com/app/view/4301
 
 AFRAME.registerShader('fmacshader', {
   schema: {
