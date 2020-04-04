@@ -6,6 +6,7 @@
 // http://glslsandbox.com/e#59252.0
 // https://glitch.com/edit/#!/aframe-simpler-shader
 // https://shaderfrog.com/app/view/4301
+// https://stackoverflow.com/questions/60984733/warning-x3550-array-reference-cannot-be-used-as-an-l-value
 
 AFRAME.registerShader('fmacshader', {
   schema: {
