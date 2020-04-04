@@ -30,7 +30,7 @@ varying vec2 vUv;
 uniform float time;
 uniform vec2 resolution;
 void main() {
-    vec2 p = vUv.xy * 0.025;
+    vec2 p = vUv.xy * 0.075;
     vec3 col;
     for (int j = 0; j < 3; j++) {
         p.x += ((0.05 / 2.0) * sin(2.0 * 10. * p.y + (time * 0.0002) + cos((time / (15000. * 2.0)) * 2.0)));
