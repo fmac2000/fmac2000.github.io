@@ -9,7 +9,7 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene vr-mode-ui="enabled: false" arjs="debugUIEnabled: false; trackingMethod: best; sourceType: webcam; matrixCodeType: 3x3;">
+        <a-scene vr-mode-ui="enabled: false" arjs="detectionMode: mono_and_matrix; debugUIEnabled: false; trackingMethod: best; sourceType: webcam; matrixCodeType: 3x3;">
         
         <a-marker id="anim-marker" type="barcode" value="6">
 		<a-plane material="shader: fmacshader; side: double" radius="0.5" width="4" height="4" rotation="90 0 0">
