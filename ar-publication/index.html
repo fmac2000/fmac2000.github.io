@@ -10,7 +10,10 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <a-scene         
+	vr-mode-ui="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
         
         <a-nft
 	type="nft"
