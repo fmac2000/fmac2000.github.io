@@ -7,13 +7,20 @@
   </head>
   <body>
 
-    <a-scene inspector="">
-      <a-assets>
-         <a-asset-item id="scene" src="assets/scene.glb"></a-asset-item>
-      </a-assets>
-      <a-entity camera look-controls kinematic-body></a-entity>
-      <a-plane static-body></a-plane>
-      <a-entity static-body gltf-model="#scene" scale="0.01 0.01 0.01"></a-entity>
-    </a-scene>
+<a-scene physics="debug: true">
+
+  <!-- Camera -->
+  <a-entity camera look-controls></a-entity>
+
+  <!-- Floor -->
+  <a-plane static-body></a-plane>
+
+  <!-- Immovable box -->
+  <a-box static-body position="0 0.5 -5" width="3" height="1" depth="1"></a-box>
+
+  <!-- Dynamic box -->
+  <a-box dynamic-body position="5 0.5 0" width="1" height="1" depth="1"></a-box>
+
+</a-scene>
   </body>
 </html>
