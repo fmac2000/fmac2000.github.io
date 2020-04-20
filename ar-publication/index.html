@@ -13,24 +13,14 @@
 
     <body style='margin : 0px; overflow: hidden;'>	  
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene stats vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; matrixCodeType: 3x3;" keyboard-shortcuts="" screenshot="" aframe-inspector-removed-embedded="undefined" inspector="">
-        <a-assets>
-	<video id="u3video" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/U3-BE.mp4"></video>    
-        <a-asset-item id="book-asset" src="https://raw.githubusercontent.com/fmac2000/fmac2000.github.io/master/ar-publication/assets/book.gltf"></a-asset-item>	
-	</a-assets>
-	<a-marker id="knot-marker" type="barcode" value="7" smooth="true" arjs-anchor="minConfidence: 0.2">
-		<a-entity id="videou3" geometry="" material="shader: video; src: #u3video" position="" scale="4 0 4">
-		</a-entity>
-		</a-marker>
+        <a-scene vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: webcam; matrixCodeType: 3x3;">
         
-        <a-marker id="anim-marker" type="barcode" value="6" smooth="true" arjs-anchor="minConfidence: 0.2">
-            <a-entity animation-mixer gltf-model="#book-asset" scale="2 2 2" position="0 0 -1.225" rotation="90 0 0">
-            </a-entity>
+        <a-marker id="anim-marker" type="barcode" value="6">
 		<a-plane material="shader: fmacshader; side: double" radius="0.5" width="4" height="4" rotation="90 0 0">
 	      </a-plane>
         </a-marker>
 		
-        <a-entity camera="" data-aframe-inspector-original-camera=""></a-entity>
+        <a-entity></a-entity>
         </a-scene>
 	</body>
 </html>
