@@ -15,16 +15,8 @@
   <a-entity id="rig" movement-controls kinematic-body>
     <a-entity camera look-controls="pointerLockEnabled: true"></a-entity>
   </a-entity>
-  <a-entity gltf-model="#scene" scale="0.01 0.01 0.01"></a-entity>
-  <!-- Floor -->
-  <a-grid static-body></a-grid>
-
-  <!-- Immovable box -->
-  <a-box static-body position="0 0.5 -5" width="3" height="1" depth="1"></a-box>
-
-  <!-- Dynamic box -->
-  <a-box dynamic-body position="5 0.5 0" width="1" height="1" depth="1"></a-box>
-
+  
+  <a-entity gltf-model="#scene" scale="0.5 0.5 0.5" static-body></a-entity>
 </a-scene>
   </body>
 </html>
