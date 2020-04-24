@@ -1,8 +1,5 @@
-<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <style>
     body {
       margin: 0px;
@@ -13,9 +10,7 @@
 
 <body>
   <div id="container"></div>
-  <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  </div>
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/103/three.min.js"></script>
 
   <script id="vertexShader" type="x-shader/x-vertex">
@@ -35,23 +30,23 @@ varying vec2 vUv;
 uniform float time;
 uniform vec2 resolution;
 void main() {
-    vec2 p = vUv.xy * .05; //Resolution scale
+     //Resolution scale
     vec3 col;
-    
+    vec2 p = vUv.xy * 0.02;
     //Spiral Variables
-    float speedX = 2500.0;
-    float speedY = 500.0;
+    float speedX = 500.0;
+    float speedY = 1000.0;
     //
-    float detailX = 0.025;
-    float detailY = 0.05;
+    float detailX = .02;
+    float detailY = .1;
     //
     for (int j = 0; j < 3; j++) { //iterate RGB
-      for (float k = 2.0; k < 26.0; k++){ //amount of spirals
-              p.x += (tan(detailX / k) * sin(k * 10. * p.y + cos(time / speedX))); //
-              p.y += (tan(detailY / k) * cos(k * 10. * p.x + sin(time / speedY))); //
+      for (float k = 2.0; k < 15.0; k++){ //amount of spirals + scale
+              p.x += ((detailX / k) * sin(k * 2. * p.y + cos(time / speedX))); //
+              p.y += ((detailY / k) * cos(k * 40. * p.x + sin(time / speedY))); //
       }
         //Work around for render error (nested loops for assigning colours won't work, variables need to be explicit not converted)
-        float c = 50. * abs(p.x + p.y); //change colour intensity
+        float c = 10. * abs(p.x + p.y); //change colour intensity
         if (j == 0) col.x = c;          //assign colours to vertex coords
         else if (j == 1) col.y = c;
         else col.z = c;
@@ -60,7 +55,6 @@ void main() {
 }
     </script>
   <script>
-
     var container;
     var camera, scene, renderer;
     var uniforms, material, mesh;
