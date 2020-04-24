@@ -90,14 +90,14 @@ void main() {
       container.appendChild(renderer.domElement);
       
 
-      if (window.innerWidth > 2560){
+      if (window.innerWidth >= 2560){
         var RenderQ = 1
-      } else if (window.innerWidth > 1920){
+      } else if (window.innerWidth >= 1920){
         var RenderQ = 2
-      } else if (window.innerWidth > 1280){
+      } else if (window.innerWidth >= 1280){
         var RenderQ = 3
       } else {
-        var RenderQ = 4
+        var RenderQ = 5
       }
       uniforms.resolution.value.x = window.innerWidth;
       uniforms.resolution.value.y = window.innerHeight;
