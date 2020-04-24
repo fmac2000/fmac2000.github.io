@@ -22,10 +22,6 @@
     </script>
 
   <script id="fragmentShader" type="x-shader/x-fragment">
-
-#extension GL_OES_standard_derivatives : enable
-
-precision highp float;
 varying vec2 vUv;
 uniform float time;
 uniform vec2 resolution;
@@ -90,17 +86,17 @@ void main() {
       scene.add(mesh);
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setPixelRatio(window.devicePixelRatio/5 ? window.devicePixelRatio/5: 1);
+      renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio: 1);
       container.appendChild(renderer.domElement);
       
 
 
       uniforms.resolution.value.x = window.innerWidth;
       uniforms.resolution.value.y = window.innerHeight;
-renderer.setSize( window.innerWidth / 4, window.innerHeight / 4 );
-document.body.appendChild( renderer.domElement );
-renderer.domElement.style.width = uniforms.resolution.value.x;
-renderer.domElement.style.height = uniforms.resolution.value.y;
+      renderer.setSize( window.innerWidth / 2, window.innerHeight / 2 ); //Rescale down for optimization
+      document.body.appendChild( renderer.domElement );
+      renderer.domElement.style.width = uniforms.resolution.value.x;
+      renderer.domElement.style.height = uniforms.resolution.value.y;
     }
 
     function animate() {
