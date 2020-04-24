@@ -77,7 +77,7 @@ void main() {
 
       uniforms = {
         time: { type: "f", value: 1.0 },
-        resolution: { type: "v2", value: new THREE.Vector2() }
+        resolution: { type: "v2", value: new THREE.Vector2()}
       };
 
       material = new THREE.ShaderMaterial({
@@ -90,12 +90,17 @@ void main() {
       scene.add(mesh);
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setPixelRatio(window.devicePixelRatio/5 ? window.devicePixelRatio/5: 1); //Render quality 0.2:1
+      renderer.setPixelRatio(window.devicePixelRatio/5 ? window.devicePixelRatio/5: 1);
       container.appendChild(renderer.domElement);
+      
+
 
       uniforms.resolution.value.x = window.innerWidth;
       uniforms.resolution.value.y = window.innerHeight;
-      renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize( window.innerWidth / 8, window.innerHeight / 8 );
+document.body.appendChild( renderer.domElement );
+renderer.domElement.style.width = uniforms.resolution.value.x;
+renderer.domElement.style.height = uniforms.resolution.value.y;
     }
 
     function animate() {
