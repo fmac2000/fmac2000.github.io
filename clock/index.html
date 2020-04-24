@@ -6,17 +6,19 @@
     <script src="assets/fmacshader.js"></script>
   </head>
   <body>
-
-<a-scene material="shader: fmacshader; side: double">
-  <a-assets>
-  <a-asset-item id="scene" src="assets/untitled.glb"></a-asset-item>
-  </a-assets>
-
-  <a-entity id="rig" movement-controls kinematic-body>
-    <a-entity camera look-controls="pointerLockEnabled: true"></a-entity>
-  </a-entity>
+    
+<a-assets>
   
-  <a-entity gltf-model="#scene" scale="0.5 0.5 0.5" static-body></a-entity>
+<a-asset-item>
+  
+</a-asset-item>
+  
+</a-assets>
+    
+<a-scene material="shader: fmacshader;">
+  
+  <a-box scale="0.5 0.5 0.5"></a-entity>
+  
 </a-scene>
   </body>
 </html>
