@@ -1,24 +1,108 @@
-<html>
-  <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-    <script src="assets/fmacshader.js"></script>
-  </head>
-  <body>
-    
-<a-assets>
-  
-<a-asset-item>
-  
-</a-asset-item>
-  
-</a-assets>
-    
-<a-scene material="shader: fmacshader;">
-  
-  <a-box scale="0.5 0.5 0.5"></a-entity>
- 
-</a-scene>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+    body {
+      margin: 0px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/103/three.min.js"></script>
+
+  <script id="vertexShader" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      }
+    </script>
+
+  <script id="fragmentShader" type="x-shader/x-fragment">
+#extension GL_OES_standard_derivatives : enable
+
+precision highp float;
+varying vec2 vUv;
+uniform float time;
+uniform vec2 resolution;
+void main() {
+    vec2 p = vUv.xy * .05; //Resolution scale
+    vec3 col;
+    for (int j = 0; j < 3; j++) { //iterate RGB
+      for (float k = 2.0; k < 26.0; k++){ //amount of spirals
+              p.x += ((0.05 / k) * sin(k * 10. * p.y + (time * 0.0002) + cos((time / (150.0 * k)) * k)));
+              p.y += ((0.02 / k) * cos(k * 10. * p.x + (time * 0.0015) + sin((time / (100.0 * k)) * k)));
+      }
+
+        float c = 50. * abs(p.x + p.y); //change colour
+        if (j == 0) col.x = c;
+        else if (j == 1) col.y = c;
+        else col.z = c;
+    }
+    gl_FragColor = vec4(col, 1.0);
+}
+    </script>
+  <script>
+    var container;
+    var camera, scene, renderer;
+    var uniforms, material, mesh;
+    var mouseX = 0, mouseY = 0,
+      lat = 0, lon = 0, phy = 0, theta = 0;
+
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+    init();
+    var startTime = Date.now();
+    animate();
+
+    function init() {
+      container = document.getElementById('container');
+
+      camera = new THREE.Camera();
+      camera.position.z = 1;
+      scene = new THREE.Scene();
+
+      uniforms = {
+        time: { type: "f", value: 1.0 },
+        resolution: { type: "v2", value: new THREE.Vector2() }
+      };
+
+      material = new THREE.ShaderMaterial({
+        uniforms: uniforms,
+        vertexShader: document.getElementById('vertexShader').textContent,
+        fragmentShader: document.getElementById('fragmentShader').textContent
+      });
+
+      mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+      scene.add(mesh);
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+      container.appendChild(renderer.domElement);
+
+      uniforms.resolution.value.x = window.innerWidth;
+      uniforms.resolution.value.y = window.innerHeight;
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      render();
+    }
+
+    function render() {
+      var elapsedMilliseconds = Date.now() - startTime;
+      var elapsedSeconds = elapsedMilliseconds / 1000.;
+      uniforms.time.value = 60. * elapsedSeconds;
+      renderer.render(scene, camera);
+    }
+  </script>
+</body>
+
 </html>
