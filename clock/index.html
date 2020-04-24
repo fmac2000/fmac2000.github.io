@@ -113,8 +113,8 @@ void main() {
       }
       uniforms.resolution.value.x = window.innerWidth;
       uniforms.resolution.value.y = window.innerHeight;
-      renderer.setSize( window.innerWidth / RenderQ, window.innerHeight / RenderQ ); //Rescale down for optimization
-      document.body.appendChild( renderer.domElement );
+      renderer.setSize( window.innerWidth / RenderQ, window.innerHeight / RenderQ ); //Downscale render for optimization
+      document.body.appendChild( renderer.domElement );  //Rescale back to OG
       renderer.domElement.style.width = uniforms.resolution.value.x;
       renderer.domElement.style.height = uniforms.resolution.value.y;
     }
