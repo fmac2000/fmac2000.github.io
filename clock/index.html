@@ -1,11 +1,4 @@
-<!-- frazer mc u3 clock brief for jaap n jose
 
- Near impossible to add this but here x
-
- https://threejs.org/docs/#api/en/materials/ShaderMaterial
- https://shaderfrog.com/app/view/4301
- https://stackoverflow.com/questions/60984733/warning-x3550-array-reference-cannot-be-used-as-an-l-value
--->
 <head>
   <style>
     body {
@@ -48,12 +41,12 @@ void main() {
     float detailY = .1;
     //
     for (int j = 0; j < 3; j++) { //iterate RGB
-      for (float k = 2.0; k < 15.0; k++){ //amount of spirals + scale
+      for (float k = 2.0; k < 25.0; k++){ //amount of spirals + scale
               p.x += ((detailX / k) * sin(k * 2. * p.y + cos(time / speedX))); //
               p.y += ((detailY / k) * cos(k * 40. * p.x + sin(time / speedY))); //
       }
         //Work around for render error (nested loops for assigning colours won't work, variables need to be explicit not converted)
-        float c = 10. * abs(p.x + p.y); //change colour intensity
+        float c = 50. * abs(p.x + p.y); //change colour intensity
         if (j == 0) col.x = c;          //assign colours to vertex coords
         else if (j == 1) col.y = c;
         else col.z = c;
@@ -97,7 +90,7 @@ void main() {
       scene.add(mesh);
 
       renderer = new THREE.WebGLRenderer();
-      renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+      renderer.setPixelRatio(window.devicePixelRatio/5 ? window.devicePixelRatio/5: 1); //Render quality 0.2:1
       container.appendChild(renderer.domElement);
 
       uniforms.resolution.value.x = window.innerWidth;
