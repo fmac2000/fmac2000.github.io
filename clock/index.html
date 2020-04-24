@@ -37,7 +37,7 @@ void main() {
     float detailY = .1;
     //
     for (int j = 0; j < 3; j++) { //iterate RGB
-      for (float k = 2.0; k < 25.0; k++){ //amount of spirals + scale
+      for (float k = 2.0; k < 5.0; k++){ //amount of spirals + scale
               p.x += ((detailX / k) * sin(k * 2. * p.y + cos(time / speedX))); //
               p.y += ((detailY / k) * cos(k * 40. * p.x + sin(time / speedY))); //
       }
