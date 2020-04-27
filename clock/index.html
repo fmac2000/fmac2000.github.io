@@ -46,12 +46,12 @@ void main() {
     float speedY = 1000.0;
     //
     float detailX = .02;
-    float detailY = .1;
+    float detailY = .05;
     //
     for (int j = 0; j < 3; j++) { //iterate RGB
       for (float k = 2.0; k < 15.0; k++){ //amount of spirals + scale
-              p.x += ((detailX / k) * sin(k * 2. * p.y + cos(time / speedX))); //
-              p.y += ((detailY / k) * cos(k * 40. * p.x + sin(time / speedY))); //
+              p.x += ((detailX / k) * sin(k * 10. * p.y + cos(time / speedX))); //
+              p.y += ((detailY / k) * cos(k * 10. * p.x + sin(time / speedY))); //
       }
         //Work around for render error (nested loops for assigning colours won't work, variables need to be explicit not converted)
         float c = 50. * abs(p.x + p.y); //change colour intensity
