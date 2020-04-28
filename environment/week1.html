@@ -6,6 +6,7 @@
     </head>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
  
@@ -17,8 +18,10 @@
             <a-asset-item id="scene" src="assets/week1scene.gltf">
             </a-asset-item>
         </a-assets>
-                                          
-        <a-entity camera="" data-aframe-inspector-original-camera=""></a-entity>
+        <!-- camera -->                                  
+        <a-entity camera="" universal-controls kinematic-body data-aframe-inspector-original-camera=""></a-entity>
+        <!-- scene -->
+        <a-grid static-body></a-grid>
         <a-entity gltf-model="#scene"></a-entity>                                                                    
         </a-scene>
     </body>
