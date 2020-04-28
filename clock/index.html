@@ -34,6 +34,9 @@
     </script>
 
   <script id="fragmentShader" type="x-shader/x-fragment">
+#extension GL_OES_standard_derivatives : enable
+
+precision highp float;
 varying vec2 vUv;
 uniform float time;
 uniform vec2 resolution;
@@ -52,55 +55,55 @@ void main() {
     float detailY = .02;
     //
     for (int j = 0; j < 3; j++) { //iterate RGB
-        p.x += ((detailX / 2.0) * sin(2.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 2.0)) * 2.0)));
-        p.y += ((detailY / 2.0) * cos(2.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 2.0)) * 2.0)));
-        p.x += ((detailX / 3.0) * sin(3.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 3.0)) * 3.0)));
-        p.y += ((detailY / 3.0) * cos(3.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 3.0)) * 3.0)));
-        p.x += ((detailX / 4.0) * sin(4.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 4.0)) * 4.0)));
-        p.y += ((detailY / 4.0) * cos(4.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 4.0)) * 4.0)));
-        p.x += ((detailX / 5.0) * sin(5.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 5.0)) * 5.0)));
-        p.y += ((detailY / 5.0) * cos(5.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 5.0)) * 5.0)));
-        p.x += ((detailX / 6.0) * sin(6.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 6.0)) * 6.0)));
-        p.y += ((detailY / 6.0) * cos(6.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 6.0)) * 6.0)));
-        p.x += ((detailX / 7.0) * sin(7.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 7.0)) * 7.0)));
-        p.y += ((detailY / 7.0) * cos(7.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 7.0)) * 7.0)));
-        p.x += ((detailX / 8.0) * sin(8.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 8.0)) * 8.0)));
-        p.y += ((detailY / 8.0) * cos(8.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 8.0)) * 8.0)));
-        p.x += ((detailX / 9.0) * sin(9.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 9.0)) * 9.0)));
-        p.y += ((detailY / 9.0) * cos(9.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 9.0)) * 9.0)));
-        p.x += ((detailX / 10.0) * sin(10.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 10.0)) * 10.0)));
-        p.y += ((detailY / 10.0) * cos(10.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 10.0)) * 10.0)));
-        p.x += ((detailX / 11.0) * sin(11.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 11.0)) * 11.0)));
-        p.y += ((detailY / 11.0) * cos(11.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 11.0)) * 11.0)));
-        p.x += ((detailX / 12.0) * sin(12.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 12.0)) * 12.0)));
-        p.y += ((detailY / 12.0) * cos(12.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 12.0)) * 12.0)));
-        p.x += ((detailX / 13.0) * sin(13.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 13.0)) * 13.0)));
-        p.y += ((detailY / 13.0) * cos(13.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 13.0)) * 13.0)));
-        p.x += ((detailX / 14.0) * sin(14.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 14.0)) * 14.0)));
-        p.y += ((detailY / 14.0) * cos(14.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 14.0)) * 14.0)));
-        p.x += ((detailX / 15.0) * sin(15.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 15.0)) * 15.0)));
-        p.y += ((detailY / 15.0) * cos(15.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 15.0)) * 15.0)));
-        p.x += ((detailX / 16.0) * sin(16.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 16.0)) * 16.0)));
-        p.y += ((detailY / 16.0) * cos(16.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 16.0)) * 16.0)));
-        p.x += ((detailX / 17.0) * sin(17.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 17.0)) * 17.0)));
-        p.y += ((detailY / 17.0) * cos(17.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 17.0)) * 17.0)));
-        p.x += ((detailX / 18.0) * sin(18.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 18.0)) * 18.0)));
-        p.y += ((detailY / 18.0) * cos(18.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 18.0)) * 18.0)));
-        p.x += ((detailX / 19.0) * sin(19.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 19.0)) * 19.0)));
-        p.y += ((detailY / 19.0) * cos(19.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 19.0)) * 19.0)));
-        p.x += ((detailX / 20.0) * sin(20.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 20.0)) * 20.0)));
-        p.y += ((detailY / 20.0) * cos(20.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 20.0)) * 20.0)));
-        p.x += ((detailX / 21.0) * sin(21.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 21.0)) * 21.0)));
-        p.y += ((detailY / 21.0) * cos(21.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 21.0)) * 21.0)));
-        p.x += ((detailX / 22.0) * sin(22.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 22.0)) * 22.0)));
-        p.y += ((detailY / 22.0) * cos(22.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 22.0)) * 22.0)));
-        p.x += ((detailX / 23.0) * sin(23.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 23.0)) * 23.0)));
-        p.y += ((detailY / 23.0) * cos(23.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 23.0)) * 23.0)));
-        p.x += ((detailX / 24.0) * sin(24.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 24.0)) * 24.0)));
-        p.y += ((detailY / 24.0) * cos(24.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 24.0)) * 24.0)));
-        p.x += ((detailX / 25.0) * sin(25.0 * 10. * p.y + (time * speed2X) + cos((time / (SpeedX. * 25.0)) * 25.0)));
-        p.y += ((detailY / 25.0) * cos(25.0 * 10. * p.x + (time * speed2Y) + sin((time / (SpeedY. * 25.0)) * 25.0)));
-      }
+        p.x += ((detailX / 2.0) * sin(2.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 2.0)) * 2.0)));
+        p.y += ((detailY / 2.0) * cos(2.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 2.0)) * 2.0)));
+        p.x += ((detailX / 3.0) * sin(3.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 3.0)) * 3.0)));
+        p.y += ((detailY / 3.0) * cos(3.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 3.0)) * 3.0)));
+        p.x += ((detailX / 4.0) * sin(4.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 4.0)) * 4.0)));
+        p.y += ((detailY / 4.0) * cos(4.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 4.0)) * 4.0)));
+        p.x += ((detailX / 5.0) * sin(5.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 5.0)) * 5.0)));
+        p.y += ((detailY / 5.0) * cos(5.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 5.0)) * 5.0)));
+        p.x += ((detailX / 6.0) * sin(6.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 6.0)) * 6.0)));
+        p.y += ((detailY / 6.0) * cos(6.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 6.0)) * 6.0)));
+        p.x += ((detailX / 7.0) * sin(7.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 7.0)) * 7.0)));
+        p.y += ((detailY / 7.0) * cos(7.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 7.0)) * 7.0)));
+        p.x += ((detailX / 8.0) * sin(8.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 8.0)) * 8.0)));
+        p.y += ((detailY / 8.0) * cos(8.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 8.0)) * 8.0)));
+        p.x += ((detailX / 9.0) * sin(9.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 9.0)) * 9.0)));
+        p.y += ((detailY / 9.0) * cos(9.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 9.0)) * 9.0)));
+        p.x += ((detailX / 10.0) * sin(10.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 10.0)) * 10.0)));
+        p.y += ((detailY / 10.0) * cos(10.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 10.0)) * 10.0)));
+        p.x += ((detailX / 11.0) * sin(11.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 11.0)) * 11.0)));
+        p.y += ((detailY / 11.0) * cos(11.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 11.0)) * 11.0)));
+        p.x += ((detailX / 12.0) * sin(12.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 12.0)) * 12.0)));
+        p.y += ((detailY / 12.0) * cos(12.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 12.0)) * 12.0)));
+        p.x += ((detailX / 13.0) * sin(13.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 13.0)) * 13.0)));
+        p.y += ((detailY / 13.0) * cos(13.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 13.0)) * 13.0)));
+        p.x += ((detailX / 14.0) * sin(14.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 14.0)) * 14.0)));
+        p.y += ((detailY / 14.0) * cos(14.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 14.0)) * 14.0)));
+        p.x += ((detailX / 15.0) * sin(15.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 15.0)) * 15.0)));
+        p.y += ((detailY / 15.0) * cos(15.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 15.0)) * 15.0)));
+        p.x += ((detailX / 16.0) * sin(16.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 16.0)) * 16.0)));
+        p.y += ((detailY / 16.0) * cos(16.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 16.0)) * 16.0)));
+        p.x += ((detailX / 17.0) * sin(17.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 17.0)) * 17.0)));
+        p.y += ((detailY / 17.0) * cos(17.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 17.0)) * 17.0)));
+        p.x += ((detailX / 18.0) * sin(18.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 18.0)) * 18.0)));
+        p.y += ((detailY / 18.0) * cos(18.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 18.0)) * 18.0)));
+        p.x += ((detailX / 19.0) * sin(19.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 19.0)) * 19.0)));
+        p.y += ((detailY / 19.0) * cos(19.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 19.0)) * 19.0)));
+        p.x += ((detailX / 20.0) * sin(20.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 20.0)) * 20.0)));
+        p.y += ((detailY / 20.0) * cos(20.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 20.0)) * 20.0)));
+        p.x += ((detailX / 21.0) * sin(21.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 21.0)) * 21.0)));
+        p.y += ((detailY / 21.0) * cos(21.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 21.0)) * 21.0)));
+        p.x += ((detailX / 22.0) * sin(22.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 22.0)) * 22.0)));
+        p.y += ((detailY / 22.0) * cos(22.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 22.0)) * 22.0)));
+        p.x += ((detailX / 23.0) * sin(23.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 23.0)) * 23.0)));
+        p.y += ((detailY / 23.0) * cos(23.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 23.0)) * 23.0)));
+        p.x += ((detailX / 24.0) * sin(24.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 24.0)) * 24.0)));
+        p.y += ((detailY / 24.0) * cos(24.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 24.0)) * 24.0)));
+        p.x += ((detailX / 25.0) * sin(25.0 * 10. * p.y + (time * speed2X) + cos((time / (speedX * 25.0)) * 25.0)));
+        p.y += ((detailY / 25.0) * cos(25.0 * 10. * p.x + (time * speed2Y) + sin((time / (speedY * 25.0)) * 25.0)));
+      
         //Work around for render error (nested loops for assigning colours won't work, variables need to be explicit not converted)
         float c = 50. * abs(p.x + p.y); //change colour intensity
         if (j == 0) col.x = c;          //assign colours to vertex coords
@@ -108,6 +111,7 @@ void main() {
         else col.z = c;
     }
     gl_FragColor = vec4(col, 1.0);
+
 }
     </script>
   <script>
