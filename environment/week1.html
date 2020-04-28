@@ -9,11 +9,17 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
  
-    <body style='margin : 0px; overflow: hidden;'>   
+    <body style='margin : 0px; overflow: hidden;'> 
+        
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene stats aframe-inspector-removed-embedded="undefined" inspector="">
-       
+        <a-assets>
+            <a-asset-item id="scene" src="assets/scene.gltf>
+            </a-asset-item>
+        </a-assets>
+                                          
         <a-entity camera="" data-aframe-inspector-original-camera=""></a-entity>
+        <a-entity gltf-model="#scene"></a-entity>                                                                    
         </a-scene>
     </body>
 </html>
