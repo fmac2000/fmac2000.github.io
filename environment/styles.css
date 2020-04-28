@@ -55,3 +55,9 @@ font-family: CourierNew, sans-serif;
 font-weight: 100;
 font-size: 55px;
 }
+/*Resize for smaller screen*/
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
