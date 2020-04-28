@@ -56,7 +56,7 @@ font-weight: 100;
 font-size: 55px;
 }
 /*Resize for smaller screen*/
-@media only screen and (max-height: 1150px) {
+@media only screen and (max-height: 1250px) {
 .title{
 font-family: BertholdAkzidenz, sans-serif;
 font-weight: 700;
@@ -69,5 +69,21 @@ width: -webkit-fill-available;
 font-family: CourierNew, sans-serif;
 font-weight: 100;
 font-size: 30px;
+}
+}
+
+@media only screen and (max-height: 800px) {
+.title{
+font-family: BertholdAkzidenz, sans-serif;
+font-weight: 700;
+font-size: 5em;
+text-align: center;
+padding-top: 15px;
+width: -webkit-fill-available;
+}
+.titlesub{
+font-family: CourierNew, sans-serif;
+font-weight: 100;
+font-size: 25px;
 }
 }
