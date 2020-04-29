@@ -12,10 +12,26 @@
  
     <body style='margin : 0px; overflow: hidden;'> 
         <a-scene inspector-plugin-recast background="color: #ECECEC" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+            <a-assets>
+                 <a-asset-item id="scene" src="assets/week1scene.gltf">
+                </a-asset-item>
+            </a-assets>
             
-            <a-entity id="rig" movement-controls="constrainToNavMesh: true" position="0 0 0">
-                <a-entity id="head" camera="Userheight: 1.6" look-controls="pointerLockEnabled: true" position="0 1.6 0" ></a-entity>
+            <!-- Camera -->
+            <a-entity id="rig"
+                      movement-controls="speed: 0.3">
+              <a-entity camera
+                        position="0 1.6 0"
+                        look-controls></a-entity>
             </a-entity>
+            
+            <!-- Scene -->
+            <a-entity gltf-model="scene.gltf"></a-entity>
+
+            <!-- NavMesh
+             <a-entity gltf-model="assets/navmeshweek1.gltf"
+             nav-mesh>
+             </a-entity> -->
             
             <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow="" material="" geometry=""></a-box>
 
@@ -26,10 +42,6 @@
             <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow="" material="" geometry=""></a-plane>
 
         </a-scene>
-        <!--<a-assets>
-            <a-asset-item id="scene" src="assets/week1scene.gltf">
-            </a-asset-item>
-        </a-assets> -->
 
     </body>
 </html>
