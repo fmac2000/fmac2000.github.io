@@ -6,20 +6,22 @@
     </head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
  
     <body style='margin : 0px; overflow: hidden;'> 
         
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene stats inspector="">
+        <a-scene stats inspector-plugin-recast>
         <!--<a-assets>
             <a-asset-item id="scene" src="assets/week1scene.gltf">
             </a-asset-item>
         </a-assets> -->
-        <!-- camera -->                                  
-        <a-entity camera="Userheight: 1.6" look-controls movement-controls kinematic-body position="0 1 0" ></a-entity>
+        <!-- camera -->
+        <a-entity id="rig" movement-controls="controls: keyboard; speed: 0.2; constrainToNavMesh: true;" position="0 0 0">
+        <a-entity id="head" camera="Userheight: 1.6" look-controls="pointerLockEnabled: true" position="0 1.6 0" ></a-entity>
+        </a-entity>
         <!-- scene -->
         <a-grid static-body></a-grid>
         <!-- <a-entity gltf-model="#scene"></a-entity> -->                                                             
