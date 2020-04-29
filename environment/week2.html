@@ -1,2 +1,37 @@
+<!doctype HTML>
 <html>
+    <head>
+    </head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js">
+	<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+
+	
+ 
+    <body style='margin : 0px; overflow: hidden;'> 
+		
+		
+        <a-scene vr-mode-ui="enabled: false" keyboard-shortcuts="" screenshot="">
+             <a-assets>
+                 <a-asset-item id="scene" src="assets/week2/week2scene.gltf">
+                </a-asset-item>
+            </a-assets>
+            
+            <!-- Camera -->
+            <a-entity id="rig"
+                      movement-controls="speed: 0.4; constrainToNavMesh: true;"
+					  position="0 0 17"
+					  >
+              <a-entity camera="fov: 60"
+                        position="0 1.6 0"
+                        look-controls="pointerLockEnabled: true"></a-entity>
+            </a-entity>
+            <!-- scene + nav -->
+            <a-entity gltf-model="#scene" scale="0.35 0.35 0.35" rotation="0 270 0"></a-entity>
+
+            <a-entity id="navMesh" gltf-model="assets/week2/navmesh.gltf"
+             nav-mesh visible="false" rotation="0 270 0"></a-entity>
+
+        </a-scene>
+    </body>
 </html>
