@@ -1,37 +1,121 @@
-<!doctype HTML>
+<!-- Frazer McPherson CSM 2020 -->
+<!-- https://youtu.be/cp8sSx06Bds?t=89 -->
+
+<!--________________$$$$ -->
+<!--______________$$____$$ -->
+<!--______________$$____$$ -->
+<!--______________$$____$$ -->
+<!--______________$$____$$ -->
+<!--______________$$____$$ -->
+<!--__________$$$$$$____$$$$$$ -->
+<!--________$$____$$____$$____$$$$ -->
+<!--________$$____$$____$$____$$__$$ -->
+<!--$$$$$$__$$____$$____$$____$$____$$ -->
+<!--$$____$$$$________________$$____$$ -->
+<!--$$______$$______________________$$ -->
+<!--__$$____$$______________________$$ -->
+<!--___$$$__$$______________________$$ -->
+<!--____$$__________________________$$ -->
+<!--_____$$$________________________$$ -->
+<!--______$$______________________$$$ -->
+<!--_______$$$____________________$$ -->
+<!--________$$____________________$$ -->
+<!--_________$$$________________$$$ -->
+<!--__________$$________________$$ -->
+<!--__________$$$$$$$$$$$$$$$$$$$$ -->
+<!-- figure it out yourself stop coping me love-->
 <html>
     <head>
+	<link rel="stylesheet" href="week2.css">
     </head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js">
 	<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 
 	
- 
+
     <body style='margin : 0px; overflow: hidden;'> 
-		
-		
-        <a-scene vr-mode-ui="enabled: false" keyboard-shortcuts="" screenshot="">
+	
+		<div id="a-canvas">
+	
+        <a-scene embedded vr-mode-ui="enabled: false" keyboard-shortcuts="" screenshot="">
              <a-assets>
-                 <a-asset-item id="scene" src="assets/week2/week2scene.gltf">
+                 <a-asset-item id="scene" src="https://fmac2000.github.io/environment/assets/week2/week2scene.gltf">
                 </a-asset-item>
+				
             </a-assets>
             
             <!-- Camera -->
             <a-entity id="rig"
                       movement-controls="speed: 0.4; constrainToNavMesh: true;"
-		      position="0 0 17">
-		      
+					  position="0 0 17"
+					  >
               <a-entity camera="fov: 60"
                         position="0 1.6 0"
                         look-controls="pointerLockEnabled: true"></a-entity>
             </a-entity>
+			<!-- music -->
+			<a-entity id="sound" geometry="primitive: plane" material="color: black"
+          position="10 0 0" sound="src: url(https://fmac2000.github.io/environment/assets/week2/blueavenue.mp3); 
+		  autoplay: true; positional:true; loop:true;"></a-entity>
+
+
             <!-- scene + nav -->
+			<a-light type="ambient" position="0 4 0" intensity="1.2"></a-light>
             <a-entity gltf-model="#scene" scale="0.35 0.35 0.35" rotation="0 270 0"></a-entity>
 
-            <a-entity id="navMesh" gltf-model="assets/week2/navmesh.gltf"
+            <a-entity id="navMesh" gltf-model="https://fmac2000.github.io/environment/assets/week2/navmesh.gltf"
              nav-mesh visible="false" rotation="0 270 0"></a-entity>
 
         </a-scene>
+		</div>
+		
+	<div id="sidebartitle">
+		<h1> WEEK 2 </h1>
+	</div>
+		
+	<div id="sidebartext">
+	<p>Click into the scene, wasd / arrow keys to move, mouse for viewport, esc to exit.</p>
+	<p>
+	Our week consisted of a lot of experiments in set design and 3D website functionalities. 
+	I started by looking at fashion runway design and the topics explored in them by looking into 
+	surreal / expressionist art movements. Through research I stumbled across German abstract 
+	expressionism and was particularly interested in their 1920s horror genre of film. I was 
+	drawn to The Cabinet of Dr. Caligari and the set design they adopted, using weird, surreal 
+	shapes and harsh shadows. I asked Yuru who is a extremely talented 3D modeller to create a 
+	set based on some drawing I made. While waiting for that to be made, I began the fundamental 
+	navigation code for the website to allow the user to walk around a 3D model without walking 
+	through walls or objects. Unfortunately, Yuru's model was far too complex to render on a website, 
+	leaving us stumped. However, Yuru showed me the work of James Turrell and I realised that it 
+	would be a perfect match for our requirements as it has simple geometry with expressive and 
+	surreal lighting. I figured we could bake the lighting as a texture for the model, allowing for 
+	fast website loading and rendering with detailed and beautiful scenes. Our battle is always to 
+	do with sharing files as we often send each other the incorrect files or in the wrong format. 
+	I guess our common ground is luckily in 3D modeling and rendering. Also, its lucky to get a group 
+	member who shares my taste and ideas allowing us to move past the hardest part of designing. 
+	Moving forward, I would like to expand this piece away from 3D renders and into real-time 
+	rendering of the same fidelity. - should be cool - I made this in a 3D modelling program and 
+	spent the last week trying to figure it out, absolute nightmare.</p>
+	<p>After systematic research and discussion. We chose Plato's allegory of the cave as the core 
+	concept of building our digital platform. It is a frequent reference when alluding to film and 
+	video - related to projection. We absorbed this theory as a metaphor to interpret the nature of 
+	the digital world in relation to reality. The essential difference between these two is that when 
+	you zoom into the digital world until the size of one pixel by one pixel. It is just a color block, 
+	a square, But when you enlarge a cell, in reality, it still has an infinite and invisible world 
+	inside. So the digital world is like the cave, what you see is what the world it is. Viewer's 
+	realization and value of the world is formed by these "lighting and shadow" as same as in Plato's 
+	cave.
+	I found James Turrell's work is also involved with light and space. In his work, light is the revelation,
+	 and perception is the object of study. We utilized it as a visual reference in terms of lighting and 
+	 shadow.
+	Frazer was focused on website skills and I was mainly specialized in 3D modeling. This website is an 
+	interior filled by lighting and some shadows of our movement which we scanned and turned into a 3D module 
+	appear in this space. This website allows viewers to explore their investigation of light, space, and 
+	perception. We actually tried more modules. But due to the loading speed, they are way too complex for a 
+	computer to render. Thanks to Frazer, we do not only have the same interest and taste in module and 
+	rendering. He is also a workaholic. He kept coding and uploading for several non-sleep nights. We 
+	need to carry on finishing it and focus on the baking and rendering.
+	</p>
+	</div>
     </body>
 </html>
