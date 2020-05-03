@@ -1,0 +1,96 @@
+@font-face {
+font-family: BertholdAkzidenz;
+src: url("https://fmac2000.github.io/environment/assets/BERTHOLD AKZIDENZ GROTESK BOLD.OTF");
+}
+@font-face {
+font-family: CourierNew;
+src: url("https://fmac2000.github.io/environment/assets/COUR.TTF");
+}
+* {box-sizing: border-box;}
+body {font-family: CourierNew, sans-serif; overflow: hidden; margin:0;}
+h1{font-family: BertholdAkzidenz, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+max-width: 100%;
+margin: auto;
+position: relative;
+display: block;
+align-content: center;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+.mySlides{
+	position: absolute;
+	width:100%;
+}
+/* Title */
+.title{
+color:white;
+position: relative;
+font-family: BertholdAkzidenz, sans-serif;
+font-weight: 700;
+font-size: 5em;
+text-align: center;
+padding-top: 15px;
+width: -webkit-fill-available;
+}
+.titletitle{
+	margin-top:25px;
+}
+/*Subtitle*/
+.titlesub{
+font-family: CourierNew, sans-serif;
+font-weight: 100;
+font-size: 25px;
+}
+/*Resize for smaller screen*/
+
+@media only screen and (max-height: 1280px) {
+.mySlides{
+	width:175%;
+}
+.title{
+font-family: BertholdAkzidenz, sans-serif;
+font-weight: 700;
+font-size: 4em;
+text-align: center;
+width: -webkit-fill-available;
+}
+.titlesub{
+font-family: CourierNew, sans-serif;
+font-weight: 100;
+font-size: 15px;
+}
+}
+
+@media only screen and (max-height: 800px) {
+.title{
+font-family: BertholdAkzidenz, sans-serif;
+font-weight: 700;
+font-size: 2em;
+text-align: center;
+padding-top: 15px;
+width: -webkit-fill-available;
+}
+.titlesub{
+font-family: CourierNew, sans-serif;
+font-weight: 100;
+font-size: 10px;
+}
+}
+@media only screen and (max-width: 800px) {
+	.mySlides{
+	width:375%;
+}
+}
