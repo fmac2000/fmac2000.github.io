@@ -1,66 +1,44 @@
-
-<!doctype HTML>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    </head>
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script>
-
-    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-video-shader/master/dist/aframe-vid-shader.min.js"></script>
- 
-    <body style='margin : 0px; overflow: hidden;'> 
-        <a-scene inspector-plugin-recast background="color: #ECECEC" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
-            <a-assets>
-                 <a-asset-item id="scene" src="assets/week1scene.gltf">
-                </a-asset-item>
-            </a-assets>
-            
-            <!-- Camera -->
-            <a-entity id="rig"
-                      movement-controls="speed: 0.3">
-              <a-entity camera
-                        position="0 1.6 0"
-                        look-controls></a-entity>
-            </a-entity>
-            
-            <!-- Scene
-            <a-entity gltf-model="#scene" scale="0.35 0.35 0.35"></a-entity>
- -->
-            <!-- NavMesh
-             <a-entity gltf-model="assets/navmeshweek1.gltf"
-             nav-mesh>
-             </a-entity> -->
-            
-            
-            <!-- Walls -->
-            <a-box position="0 2.34251 2.24769" color="#4CC3D9" shadow="" material="" geometry="" scale="37.27 5 1"></a-box>
-            <a-box position="0 2.34251 -9.34118" color="#4CC3D9" shadow="" material="" geometry="" scale="37.27 5 1"></a-box>
-            <a-box position="18.29396 2.34251 -2.81021" color="#4CC3D9" shadow="" material="" geometry="" scale="1 5 15"></a-box>
-            <a-box position="-16.00925 2.34251 -2.81021" color="#4CC3D9" shadow="" material="" geometry="" scale="1 5 15"></a-box>
-            <!-- individual room walls -->
-            <a-box position="-10.92119 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <a-box position="-6.07921 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <a-box position="-1.18372 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <a-box position="3.61026 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <a-box position="8.36016 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <a-box position="13.21063 2.34251 -5.33662" color="#4CC3D9" shadow="" material="" geometry="" scale="0.2 5 8"></a-box>
-            <!--Doors -->
-            <a-box position="18.06808 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="13.29996 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="8.44806 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="3.61672 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="-1.20495 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="-6.06991 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="-10.88018 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            <a-box position="-15.81109 2.34251 -1.6191" color="#4CC3D9" shadow="" material="" geometry="" scale="-2.4 5 0.98"></a-box>
-            
-            <!-- Floor -->
-            <a-plane position="0 0 -3.46554" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow="" material="" geometry="" scale="10 2.82 1"></a-plane>
-
-        </a-scene>
-
-    </body>
+<head>
+<link rel="stylesheet" href="week1.css">
+</head>
+<body>
+<iframe width="100%" height="80%" 
+src="https://web.microsoftstream.com/embed/video/4e03c8cf-85ce-4ebd-b5b9-ebcb5e2e2ad1?autoplay=false&amp;showinfo=true"
+ allowfullscreen style="border:none;"></iframe>
+ <div id="reflection">
+ <h1>
+ WEEK 1
+ </h1>
+ <p>
+Our first week began with an old idea I've had that could expand on the classic website model. I saw that the 
+technology for an immersive and interactive website could be made with the existing libraries and systems that 
+are available to everyone today. The link to the brief fits nicely as I believe the theme explores the idea of 
+"liminality" as it examines the passing of one state to another, in this case being the passing of the traditional 
+into the futuristic. After discussing ideas in my group we still felt as this initial idea was the strongest for a 
+couple reasons. Our main attraction to this was bluntly that we think it would look good on a portfolio. The degree 
+of technical ability is quite advanced and would be a good showcase of our skills and talent. I've seen previous 
+examples of these 3D sites however, I believe them to be quite uninspired and lacking artistic aesthetic. Having 
+received the brief on Tuesday with the hand-in on Thursday we did pretty well to get on with an idea. The timezone 
+difference and Chinese firewall made it incredibly hard to negotiate files between our computers however, after much 
+back and forth we managed to transfer. I have much interest in modern technology and felt it slides nicely into our 
+idea, so we began scanning our faces using Record3D and creating a few scenes in C4D. I added these into Sketchfab 
+and began recording some very basic shots and composition for the video. I decided to add some J Dilla into the mix 
+to make it a slam dunk.
+ </p>
+ <p>
+ Reflecting on our wired life status currently, we were intrigued by the liminal space between reality and digital 
+ world-our daily communication with others is connected by screens.The digital world is somehow taking over reality 
+ during the lockdown period. The boundary is getting ambiguous. Our initial idea is re-creating our CSM campus by 
+ building a model and scan CSM students’s faces to upload on a website. We intend to recreate the campus by collecting 
+ people's memory about the campus so that it is not exactly as same as it in reality. It is a liminal space between our
+ memory and the real campus which refers to our concept about liminal space. Viewers are able to navigate themselves 
+ in "CSM campus" by moving mouse and interact with student's faces in this network platform. We wish to evoke viewers' 
+ emotion of this place especially people from CSM and rethink about reality and the digital world afterwards.
+We tried to scan our faces on Record3D app and I built a draft model of my flat in London according to my inaccurate 
+memory to visualize our concept. There are some technical problems that we need to figure out, the right format to 
+upload, the coding of interaction with viewers and the speed of loading, etc.
+ </p>
+ </div>
+</body>
 </html>
